@@ -19,7 +19,6 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   max_connections: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
-
 development:
   <<: *default
   database: rails_saas_starter_development
@@ -82,4 +81,5 @@ production:
   <<: *default
   database: rails_saas_starter_production
   username: rails_saas_starter
-  password: <%= ENV["RAILS_SAAS_STARTER_DATABASE_PASSWORD"] %>
+  password: <%= ENV["POSTGRES_PASSWORD"] %>
+  host: <%= ENV["DB_HOST"] %>
