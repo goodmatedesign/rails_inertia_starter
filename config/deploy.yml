@@ -7,7 +7,7 @@ image: rails_saas_starter
 # Deploy to these servers.
 servers:
   web:
-    - 192.168.0.1
+    - 168.138.13.133
   # job:
   #   hosts:
   #     - 192.168.0.1
@@ -68,7 +68,6 @@ volumes:
 # version inside the asset_path.
 asset_path: /rails/public/assets
 
-
 # Configure the image builder.
 builder:
   arch: amd64
@@ -84,9 +83,8 @@ builder:
   #   - RAILS_MASTER_KEY
 
 # Use a different ssh user than root
-# ssh:
-#   user: app
-
+ssh:
+  user: ubuntu
 # Use accessory services (secrets come from .kamal/secrets).
 # accessories:
 #   db:
