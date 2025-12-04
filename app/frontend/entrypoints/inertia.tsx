@@ -1,6 +1,8 @@
 import { createInertiaApp, type ResolvedComponent } from '@inertiajs/react'
-import { StrictMode } from 'react'
+import { StrictMode, type ReactNode } from 'react'
 import { createRoot } from 'react-dom/client'
+
+import DefaultLayout from '@/layouts/default-layout'
 
 void createInertiaApp({
   // Set default page title
@@ -22,11 +24,8 @@ void createInertiaApp({
       console.error(`Missing Inertia page component: '${name}.tsx'`)
     }
 
-    // To use a default layout, import the Layout component
-    // and use the following line.
-    // see https://inertia-rails.dev/guide/pages#default-layouts
-    //
-    // page.default.layout ||= (page: ReactNode) => (<Layout>{page}</Layout>)
+    // Use default layout for all pages
+    page.default.layout ||= (page: ReactNode) => <DefaultLayout>{page}</DefaultLayout>
 
     return page
   },

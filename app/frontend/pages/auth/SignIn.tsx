@@ -3,9 +3,8 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import type { SharedProps } from '@/types'
 
-export default function SignIn({ flash }: SharedProps) {
+export default function SignIn() {
   const { data, setData, post, processing } = useForm({
     email: '',
   })
@@ -27,17 +26,6 @@ export default function SignIn({ flash }: SharedProps) {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          {flash?.notice && (
-            <div className="mb-4 p-3 rounded-md bg-green-50 text-green-800 text-sm dark:bg-green-900/20 dark:text-green-400">
-              {flash.notice}
-            </div>
-          )}
-          {flash?.alert && (
-            <div className="mb-4 p-3 rounded-md bg-red-50 text-red-800 text-sm dark:bg-red-900/20 dark:text-red-400">
-              {flash.alert}
-            </div>
-          )}
-
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>

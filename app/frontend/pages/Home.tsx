@@ -2,7 +2,7 @@ import { Head, Link, router } from '@inertiajs/react'
 import { Button } from '@/components/ui/button'
 import type { SharedProps } from '@/types'
 
-export default function Home({ user, flash }: SharedProps) {
+export default function Home({ user }: SharedProps) {
   const handleSignOut = () => {
     router.delete('/sign_out')
   }
@@ -28,14 +28,6 @@ export default function Home({ user, flash }: SharedProps) {
           </nav>
         </div>
       </header>
-
-      {flash?.notice && (
-        <div className="container mx-auto px-4 mt-4">
-          <div className="p-3 rounded-md bg-green-50 text-green-800 text-sm dark:bg-green-900/20 dark:text-green-400">
-            {flash.notice}
-          </div>
-        </div>
-      )}
 
       <main className="container mx-auto px-4 py-24 text-center">
         <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
