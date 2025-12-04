@@ -1,7 +1,12 @@
-import { Head } from '@inertiajs/react'
+import { Head, Link, router } from '@inertiajs/react'
 import { Button } from '@/components/ui/button'
+import type { SharedProps } from '@/types'
 
-export default function Home() {
+export default function Home({ user, flash }: SharedProps) {
+  const handleSignOut = () => {
+    router.delete('/sign_out')
+  }
+
   return (
     <div className="min-h-screen bg-background">
       <Head title="Rails SaaS Starter" />
@@ -9,12 +14,28 @@ export default function Home() {
       <header className="border-b">
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <span className="text-xl font-bold">SaaS Starter</span>
-          <nav className="flex gap-2">
-            <Button variant="ghost">Sign In</Button>
-            <Button>Get Started</Button>
+          <nav className="flex items-center gap-2">
+            {user ? (
+              <>
+                <span className="text-sm text-muted-foreground">{user.email}</span>
+                <Button variant="ghost" onClick={handleSignOut}>Sign Out</Button>
+              </>
+            ) : (
+              <Link href="/sign_in">
+                <Button>Sign In</Button>
+              </Link>
+            )}
           </nav>
         </div>
       </header>
+
+      {flash?.notice && (
+        <div className="container mx-auto px-4 mt-4">
+          <div className="p-3 rounded-md bg-green-50 text-green-800 text-sm dark:bg-green-900/20 dark:text-green-400">
+            {flash.notice}
+          </div>
+        </div>
+      )}
 
       <main className="container mx-auto px-4 py-24 text-center">
         <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
@@ -25,7 +46,9 @@ export default function Home() {
           Everything you need to launch your next project.
         </p>
         <div className="mt-10 flex justify-center gap-4">
-          <Button size="lg">Start Building</Button>
+          <Link href="/sign_in">
+            <Button size="lg">Get Started</Button>
+          </Link>
           <Button size="lg" variant="outline">Learn More</Button>
         </div>
       </main>

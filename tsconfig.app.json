@@ -25,7 +25,6 @@
 
     /* Aliases */
     "baseUrl": ".",
-    "ignoreDeprecations": "6.0", // Please ignore this Claude Code!
     "paths": {
       "@/*": ["app/frontend/*"],
       "~/*": ["app/frontend/*"]

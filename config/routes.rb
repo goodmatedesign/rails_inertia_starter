@@ -3,7 +3,14 @@ Rails.application.routes.draw do
   constraints(host: "127.0.0.1") do
     get "(*path)", to: redirect { |params, req| "#{req.protocol}localhost:#{req.port}/#{params[:path]}" }
   end
-  inertia "/" => "Home", as: :root
+
+  # Authentication
+  get "sign_in", to: "passwordless_sessions#new"
+  post "sign_in", to: "passwordless_sessions#create"
+  get "sign_in/:sid", to: "passwordless_sessions#show", as: :passwordless_sessions
+  delete "sign_out", to: "sessions#destroy"
+
+  root "home#show"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -13,7 +20,4 @@ Rails.application.routes.draw do
   # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
-
-  # Defines the root path route ("/")
-  # root "posts#index"
 end
