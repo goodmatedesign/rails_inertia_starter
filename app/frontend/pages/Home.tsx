@@ -17,7 +17,7 @@ export default function Home({ user }: SharedProps) {
           <nav className="flex items-center gap-2">
             {user ? (
               <>
-                <span className="text-sm text-muted-foreground">{user.email}</span>
+                <span className="text-sm text-muted-foreground">{user.name}</span>
                 <Button variant="ghost" onClick={handleSignOut}>Sign Out</Button>
               </>
             ) : (

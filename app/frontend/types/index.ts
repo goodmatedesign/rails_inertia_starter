@@ -4,6 +4,7 @@ export type Flash = {
 }
 
 export type User = {
+  name: string
   email: string
 }
 

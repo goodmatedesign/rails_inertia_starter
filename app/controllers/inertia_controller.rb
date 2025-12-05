@@ -6,6 +6,6 @@ class InertiaController < ApplicationController
     def user_props
       return nil unless Current.session&.user
 
-      { email: Current.user.email }
+      { name: Current.user.name, email: Current.user.email }
     end
 end
