@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount_avo
   # Authentication
   get "sign_in", to: "passwordless_sessions#new"
   post "sign_in", to: "passwordless_sessions#create"
