@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   get "sign_in/:sid", to: "passwordless_sessions#show", as: :passwordless_sessions
   delete "sign_out", to: "sessions#destroy"
 
+  # OmniAuth
+  get "auth/:provider/callback", to: "omniauth#create"
+  post "auth/:provider/callback", to: "omniauth#create"
+  get "auth/failure", to: "omniauth#failure"
+
   root "home#show"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
