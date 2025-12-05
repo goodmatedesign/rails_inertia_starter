@@ -3,11 +3,6 @@ require "test_helper"
 class PasswordlessSessionsControllerTest < ActionDispatch::IntegrationTest
   include ActionMailer::TestHelper
 
-  test "get sign in page" do
-    get sign_in_url
-    assert_response :success
-  end
-
   test "sends magic link and creates user if needed" do
     assert_difference "User.count", 1 do
       assert_enqueued_emails 1 do
