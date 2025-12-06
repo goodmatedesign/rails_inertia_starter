@@ -68,3 +68,7 @@ end
 
 gem "vite_rails", "~> 3.0"
 gem "avo", ">= 3.2"
+
+# Avo markdown field support
+gem "marksmith"
+gem "commonmarker"

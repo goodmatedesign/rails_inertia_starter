@@ -1,0 +1,13 @@
+published:
+  user: one
+  title: Published Post
+  slug: published-post
+  content: This is a published blog post.
+  published_at: <%= 1.day.ago %>
+
+draft:
+  user: one
+  title: Draft Post
+  slug: draft-post
+  content: This is a draft blog post.
+  published_at:

@@ -122,6 +122,13 @@ GEM
       xpath (~> 3.2)
     childprocess (5.1.0)
       logger (~> 1.5)
+    commonmarker (2.6.0)
+      rb_sys (~> 0.9)
+    commonmarker (2.6.0-aarch64-linux)
+    commonmarker (2.6.0-aarch64-linux-musl)
+    commonmarker (2.6.0-arm64-darwin)
+    commonmarker (2.6.0-x86_64-linux)
+    commonmarker (2.6.0-x86_64-linux-musl)
     concurrent-ruby (1.3.5)
     connection_pool (2.5.5)
     crass (1.0.6)
@@ -203,6 +210,8 @@ GEM
       net-pop
       net-smtp
     marcel (1.1.0)
+    marksmith (0.4.7)
+      activesupport
     matrix (0.4.3)
     meta-tags (2.22.2)
       actionpack (>= 6.0.0, < 8.2)
@@ -344,6 +353,9 @@ GEM
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
     rake (13.3.1)
+    rake-compiler-dock (1.10.0)
+    rb_sys (0.9.119)
+      rake-compiler-dock (= 1.10.0)
     rdoc (6.16.1)
       erb
       psych (>= 4.0.0)
@@ -468,12 +480,14 @@ DEPENDENCIES
   brakeman
   bundler-audit
   capybara
+  commonmarker
   debug
   image_processing (~> 1.2)
   inertia_rails (~> 3.14)
   jbuilder
   kamal
   letter_opener
+  marksmith
   omniauth
   omniauth-google-oauth2
   omniauth-rails_csrf_protection
