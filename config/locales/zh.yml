@@ -61,3 +61,4 @@ zh:
     invalid_token: "登录链接无效或已过期。"
     sign_in_required: "您需要登录才能访问此页面。"
     already_signed_in: "您已经登录。"
+    rate_limited: "尝试次数过多，请稍后再试。"

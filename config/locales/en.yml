@@ -61,3 +61,4 @@ en:
     invalid_token: "Invalid or expired sign-in link."
     sign_in_required: "You need to sign in to access this page."
     already_signed_in: "You are already signed in."
+    rate_limited: "Too many attempts. Please try again later."

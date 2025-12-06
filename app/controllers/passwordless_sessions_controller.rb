@@ -2,6 +2,12 @@ class PasswordlessSessionsController < InertiaController
   skip_before_action :authenticate
   before_action :require_no_authentication, only: %i[new create]
 
+  rate_limit to: 10, within: 3.minutes, only: :create,
+    with: -> { redirect_to sign_in_path, alert: t("flash.rate_limited") }
+
+  rate_limit to: 10, within: 15.minutes, only: :show,
+    with: -> { redirect_to sign_in_path, alert: t("flash.rate_limited") }
+
   def new
     render inertia: "auth/SignIn"
   end
