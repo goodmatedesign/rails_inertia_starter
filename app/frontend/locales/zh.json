@@ -12,15 +12,6 @@
         "subtitle": "登录或创建账户",
         "title": "登录",
         "welcome": "欢迎"
-      },
-      "verify_code": {
-        "title": "输入验证码",
-        "subtitle": "我们已将验证码发送至 {{email}}",
-        "code": "验证码",
-        "code_placeholder": "000000",
-        "verify": "验证",
-        "verifying": "验证中...",
-        "check_spam": "没有收到邮件？请检查垃圾邮件文件夹。"
       }
     },
     "avo": {
@@ -170,8 +161,8 @@
     },
     "flash": {
       "already_signed_in": "您已经登录。",
-      "invalid_token": "登录链接无效或已过期。",
       "invalid_code": "验证码无效或已过期，请重试。",
+      "invalid_token": "登录链接无效或已过期。",
       "magic_link_sent": "请检查您的邮箱获取登录验证码。",
       "rate_limited": "尝试次数过多，请稍后再试。",
       "sign_in_required": "您需要登录才能访问此页面。",

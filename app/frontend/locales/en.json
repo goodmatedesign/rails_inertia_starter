@@ -23,15 +23,6 @@
         "subtitle": "Sign in or create an account",
         "title": "Sign In",
         "welcome": "Welcome"
-      },
-      "verify_code": {
-        "title": "Enter Code",
-        "subtitle": "We sent a code to {{email}}",
-        "code": "Verification Code",
-        "code_placeholder": "000000",
-        "verify": "Verify",
-        "verifying": "Verifying...",
-        "check_spam": "Don't see the email? Check your spam folder."
       }
     },
     "avo": {
@@ -345,8 +336,8 @@
     },
     "flash": {
       "already_signed_in": "You are already signed in.",
-      "invalid_token": "Invalid or expired sign-in link.",
       "invalid_code": "Invalid or expired code. Please try again.",
+      "invalid_token": "Invalid or expired sign-in link.",
       "magic_link_sent": "Check your email for a sign-in code.",
       "rate_limited": "Too many attempts. Please try again later.",
       "sign_in_required": "You need to sign in to access this page.",
