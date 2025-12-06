@@ -191,6 +191,16 @@
       "read_more": "阅读",
       "read_more_placeholder": "阅读更多关于此主题的内容...",
       "title": "博客"
+    },
+    "user_mailer": {
+      "passwordless": {
+        "expiry": "此链接将在1小时后过期，且只能使用一次。",
+        "greeting": "您好，",
+        "ignore": "如果您没有请求此链接，请忽略此邮件。",
+        "instructions": "点击下方链接登录您的账户：",
+        "sign_in": "登录",
+        "subject": "您的登录链接"
+      }
     }
   }
 }

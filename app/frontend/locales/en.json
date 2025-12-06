@@ -478,6 +478,16 @@
         "short": "%d %b %H:%M"
       },
       "pm": "pm"
+    },
+    "user_mailer": {
+      "passwordless": {
+        "expiry": "This link expires in 1 hour and can only be used once.",
+        "greeting": "Hi,",
+        "ignore": "If you didn't request this link, you can safely ignore this email.",
+        "instructions": "Click the link below to sign in to your account:",
+        "sign_in": "Sign in",
+        "subject": "Your sign-in link"
+      }
     }
   }
 }

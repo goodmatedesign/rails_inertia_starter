@@ -43,6 +43,16 @@ en:
     back_to_posts: "Back to Posts"
     no_posts: "No posts yet."
 
+  # Mailers
+  user_mailer:
+    passwordless:
+      subject: "Your sign-in link"
+      greeting: "Hi,"
+      instructions: "Click the link below to sign in to your account:"
+      sign_in: "Sign in"
+      expiry: "This link expires in 1 hour and can only be used once."
+      ignore: "If you didn't request this link, you can safely ignore this email."
+
   # Flash messages
   flash:
     signed_in: "You have been signed in successfully."

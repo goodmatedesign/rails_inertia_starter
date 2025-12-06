@@ -43,6 +43,16 @@ zh:
     back_to_posts: "返回文章列表"
     no_posts: "暂无文章。"
 
+  # Mailers
+  user_mailer:
+    passwordless:
+      subject: "您的登录链接"
+      greeting: "您好，"
+      instructions: "点击下方链接登录您的账户："
+      sign_in: "登录"
+      expiry: "此链接将在1小时后过期，且只能使用一次。"
+      ignore: "如果您没有请求此链接，请忽略此邮件。"
+
   # Flash messages
   flash:
     signed_in: "您已成功登录。"

@@ -5,7 +5,7 @@ class UserMailer < ApplicationMailer
     @signed_id = @user.generate_token_for(:passwordless)
 
     I18n.with_locale(@locale) do
-      mail to: @user.email, subject: "Your sign-in link"
+      mail to: @user.email, subject: t("user_mailer.passwordless.subject")
     end
   end
 end
