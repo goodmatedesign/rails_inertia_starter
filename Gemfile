@@ -72,3 +72,6 @@ gem "avo", ">= 3.2"
 # Avo markdown field support
 gem "marksmith"
 gem "commonmarker"
+
+# I18n support for JavaScript
+gem "i18n-js", "~> 4.2"

@@ -1,35 +1,43 @@
-import { Head, useForm } from '@inertiajs/react'
+import { Head, useForm, usePage } from '@inertiajs/react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { useI18n } from '@/hooks/use-i18n'
+import { LocaleSwitcher } from '@/components/locale-switcher'
+import type { SharedProps } from '@/types'
 
 export default function SignIn() {
+  const { t } = useI18n()
+  const { locale } = usePage<SharedProps>().props
   const { data, setData, post, processing } = useForm({
     email: '',
   })
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    post('/sign_in')
+    post(`/${locale}/sign_in`)
   }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-background px-4">
-      <Head title="Sign In" />
+      <Head title={t("auth.sign_in.title")} />
 
       <Card className="w-full max-w-md">
         <CardHeader className="text-center">
-          <CardTitle className="text-2xl">Welcome</CardTitle>
+          <div className="flex justify-end mb-2">
+            <LocaleSwitcher />
+          </div>
+          <CardTitle className="text-2xl">{t("auth.sign_in.welcome")}</CardTitle>
           <CardDescription>
-            Sign in or create an account
+            {t("auth.sign_in.subtitle")}
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <form action="/auth/google_oauth2" method="post">
             <input type="hidden" name="authenticity_token" value={document.querySelector<HTMLMetaElement>('meta[name="csrf-token"]')?.content || ''} />
             <Button type="submit" variant="outline" className="w-full">
-              Continue with Google
+              {t("auth.sign_in.continue_google")}
             </Button>
           </form>
 
@@ -38,17 +46,17 @@ export default function SignIn() {
               <span className="w-full border-t" />
             </div>
             <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-background px-2 text-muted-foreground">Or</span>
+              <span className="bg-background px-2 text-muted-foreground">{t("auth.sign_in.or")}</span>
             </div>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email">{t("auth.sign_in.email")}</Label>
               <Input
                 id="email"
                 type="email"
-                placeholder="you@example.com"
+                placeholder={t("auth.sign_in.email_placeholder")}
                 value={data.email}
                 onChange={(e) => setData('email', e.target.value)}
                 required
@@ -56,7 +64,7 @@ export default function SignIn() {
             </div>
 
             <Button type="submit" className="w-full" disabled={processing}>
-              {processing ? 'Sending...' : 'Continue with Email'}
+              {processing ? t("auth.sign_in.sending") : t("auth.sign_in.continue_email")}
             </Button>
           </form>
         </CardContent>

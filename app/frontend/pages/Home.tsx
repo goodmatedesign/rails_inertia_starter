@@ -1,25 +1,29 @@
-import { Head, Link } from '@inertiajs/react'
+import { Head, Link, usePage } from '@inertiajs/react'
 import { Layout } from '@/components/layout'
 import { Button } from '@/components/ui/button'
+import { useI18n } from '@/hooks/use-i18n'
+import type { SharedProps } from '@/types'
 
 export default function Home() {
+  const { t } = useI18n()
+  const { locale } = usePage<SharedProps>().props
+
   return (
     <Layout>
-      <Head title="Rails SaaS Starter" />
+      <Head title={t("home.title")} />
 
       <main className="container mx-auto px-4 py-24 text-center">
         <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
-          Build your SaaS faster
+          {t("home.heading")}
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-          A modern Rails starter with React, Inertia.js, and Tailwind CSS.
-          Everything you need to launch your next project.
+          {t("home.description")}
         </p>
         <div className="mt-10 flex justify-center gap-4">
-          <Link href="/sign_in">
-            <Button size="lg">Get Started</Button>
+          <Link href={`/${locale}/sign_in`}>
+            <Button size="lg">{t("home.get_started")}</Button>
           </Link>
-          <Button size="lg" variant="outline">Learn More</Button>
+          <Button size="lg" variant="outline">{t("home.learn_more")}</Button>
         </div>
       </main>
     </Layout>

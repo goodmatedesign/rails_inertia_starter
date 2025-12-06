@@ -1,26 +1,32 @@
 Rails.application.routes.draw do
   mount_avo
-  # Authentication
-  get "sign_in", to: "passwordless_sessions#new"
-  post "sign_in", to: "passwordless_sessions#create"
-  get "sign_in/:sid", to: "passwordless_sessions#show", as: :passwordless_sessions
-  delete "sign_out", to: "sessions#destroy"
 
-  # OmniAuth
+  # OmniAuth (outside locale scope - callbacks don't need localization)
   get "auth/:provider/callback", to: "omniauth#create"
   post "auth/:provider/callback", to: "omniauth#create"
   get "auth/failure", to: "omniauth#failure"
 
-  root "home#show"
-
-  # Posts
-  resources :posts, only: [ :index ]
-  get "posts/:slug", to: "posts#show", as: :post
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
+  # Health check (outside locale scope)
   get "up" => "rails/health#show", as: :rails_health_check
+
+  # Root redirects to default locale
+  root to: redirect("/#{I18n.default_locale}", status: 302)
+
+  # Locale-scoped routes
+  scope "/:locale", locale: /#{I18n.available_locales.join('|')}/ do
+    # Authentication
+    get "sign_in", to: "passwordless_sessions#new", as: :sign_in
+    post "sign_in", to: "passwordless_sessions#create"
+    get "sign_in/:sid", to: "passwordless_sessions#show", as: :passwordless_sessions
+    delete "sign_out", to: "sessions#destroy", as: :sign_out
+
+    # Home
+    root "home#show", as: :localized_root
+
+    # Posts
+    resources :posts, only: [ :index ]
+    get "posts/:slug", to: "posts#show", as: :post
+  end
 
   # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest

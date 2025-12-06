@@ -1,31 +1,53 @@
-# Files in the config/locales directory are used for internationalization and
-# are automatically loaded by Rails. If you want to use locales other than
-# English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more about the API, please read the Rails Internationalization guide
-# at https://guides.rubyonrails.org/i18n.html.
-#
-# Be aware that YAML interprets the following case-insensitive strings as
-# booleans: `true`, `false`, `on`, `off`, `yes`, `no`. Therefore, these strings
-# must be quoted to be interpreted as strings. For example:
-#
-#     en:
-#       "yes": yup
-#       enabled: "ON"
-
 en:
-  hello: "Hello world"
+  # Common
+  app_name: "SaaS Starter"
+
+  # Navigation
+  nav:
+    features: "Features"
+    feature_1: "Feature 1"
+    feature_1_desc: "Description for feature 1"
+    feature_2: "Feature 2"
+    feature_2_desc: "Description for feature 2"
+    pricing: "Pricing"
+    posts: "Posts"
+    sign_in: "Sign In"
+    sign_out: "Sign Out"
+
+  # Home page
+  home:
+    title: "Rails SaaS Starter"
+    heading: "Build your SaaS faster"
+    description: "A modern Rails starter with React, Inertia.js, and Tailwind CSS. Everything you need to launch your next project."
+    get_started: "Get Started"
+    learn_more: "Learn More"
+
+  # Auth
+  auth:
+    sign_in:
+      title: "Sign In"
+      welcome: "Welcome"
+      subtitle: "Sign in or create an account"
+      continue_google: "Continue with Google"
+      or: "Or"
+      email: "Email"
+      email_placeholder: "you@example.com"
+      continue_email: "Continue with Email"
+      sending: "Sending..."
+
+  # Posts
+  posts:
+    title: "Blog"
+    read_more: "Read"
+    read_more_placeholder: "Read more about this topic..."
+    back_to_posts: "Back to Posts"
+    no_posts: "No posts yet."
+
+  # Flash messages
+  flash:
+    signed_in: "You have been signed in successfully."
+    signed_out: "You have been signed out."
+    magic_link_sent: "Check your email for a sign-in link."
+    invalid_token: "Invalid or expired sign-in link."
+    sign_in_required: "You need to sign in to access this page."
+    already_signed_in: "You are already signed in."

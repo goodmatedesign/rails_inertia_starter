@@ -1,6 +1,8 @@
-import { Link } from "@inertiajs/react";
+import { Link, usePage } from "@inertiajs/react";
 import { ArrowRightIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useI18n } from "@/hooks/use-i18n";
+import type { SharedProps } from "@/types";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -17,22 +19,24 @@ export type BlogPost = {
 
 type BlogProps = {
   posts: BlogPost[];
-  title?: string;
 };
 
 const placeholderImage =
   "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80";
 
-const Blog = ({ posts, title = "Discover Our Fresh Content" }: BlogProps) => {
+const Blog = ({ posts }: BlogProps) => {
+  const { t } = useI18n();
+  const { locale } = usePage<SharedProps>().props;
+
   return (
     <section className="bg-background py-32">
       <div className="container mx-auto px-4">
         <h1 className="text-foreground mb-12 max-w-lg font-sans text-5xl font-extrabold tracking-tight md:text-7xl">
-          {title}
+          {t("posts.title")}
         </h1>
 
         {posts.length === 0 ? (
-          <p className="text-muted-foreground">No posts yet.</p>
+          <p className="text-muted-foreground">{t("posts.no_posts")}</p>
         ) : (
           <div className="flex flex-col">
             {posts.map((post, index) => (
@@ -56,7 +60,7 @@ const Blog = ({ posts, title = "Discover Our Fresh Content" }: BlogProps) => {
                       )}
                     >
                       <div className="flex h-full w-full flex-col items-start justify-between pr-8">
-                        <Link href={`/posts/${post.slug}`}>
+                        <Link href={`/${locale}/posts/${post.slug}`}>
                           <h2 className="text-foreground text-2xl font-bold tracking-tight md:text-3xl hover:underline">
                             {post.title}
                           </h2>
@@ -67,16 +71,16 @@ const Blog = ({ posts, title = "Discover Our Fresh Content" }: BlogProps) => {
                       </div>
                       <div className="flex h-full w-full flex-col items-start justify-between gap-6">
                         <p className="text-muted-foreground text-lg font-normal leading-relaxed tracking-tight md:text-xl">
-                          {post.description || "Read more about this topic..."}
+                          {post.description || t("posts.read_more_placeholder")}
                         </p>
                         <Button
                           variant="ghost"
                           className="text-primary hover:text-accent-foreground inline-flex items-center justify-center gap-4 px-0 transition-all ease-in-out hover:gap-6"
                           asChild
                         >
-                          <Link href={`/posts/${post.slug}`}>
+                          <Link href={`/${locale}/posts/${post.slug}`}>
                             <span className="text-lg font-semibold tracking-tight">
-                              Read
+                              {t("posts.read_more")}
                             </span>
                             <ArrowRightIcon />
                           </Link>

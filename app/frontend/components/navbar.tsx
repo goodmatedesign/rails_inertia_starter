@@ -23,6 +23,8 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { LocaleSwitcher } from "@/components/locale-switcher";
+import { useI18n } from "@/hooks/use-i18n";
 import type { SharedProps } from "@/types";
 
 interface MenuItem {
@@ -42,37 +44,46 @@ interface NavbarProps {
 }
 
 const Navbar = ({
-  logo = {
-    url: "/",
-    title: "SaaS Starter",
-  },
-  menu = [
+  logo,
+  menu,
+}: NavbarProps) => {
+  const { user, locale } = usePage<SharedProps>().props;
+  const { t } = useI18n();
+
+  // Default values with translations
+  const defaultLogo = {
+    url: `/${locale}`,
+    title: t("app_name"),
+  };
+
+  const defaultMenu: MenuItem[] = [
     {
-      title: "Features",
+      title: t("nav.features"),
       url: "#",
       items: [
         {
-          title: "Feature 1",
-          description: "Description for feature 1",
+          title: t("nav.feature_1"),
+          description: t("nav.feature_1_desc"),
           icon: <Zap className="size-5 shrink-0" />,
           url: "#",
         },
         {
-          title: "Feature 2",
-          description: "Description for feature 2",
+          title: t("nav.feature_2"),
+          description: t("nav.feature_2_desc"),
           icon: <Book className="size-5 shrink-0" />,
           url: "#",
         },
       ],
     },
-    { title: "Pricing", url: "#" },
-    { title: "Posts", url: "/posts" },
-  ],
-}: NavbarProps) => {
-  const { user } = usePage<SharedProps>().props;
+    { title: t("nav.pricing"), url: "#" },
+    { title: t("nav.posts"), url: `/${locale}/posts` },
+  ];
+
+  const activeLogo = logo || defaultLogo;
+  const activeMenu = menu || defaultMenu;
 
   const handleSignOut = () => {
-    router.delete("/sign_out");
+    router.delete(`/${locale}/sign_out`);
   };
   return (
     <header className="border-b">
@@ -81,28 +92,29 @@ const Navbar = ({
         <nav className="hidden h-16 items-center justify-between lg:flex">
           <div className="flex items-center gap-6">
             {/* Logo */}
-            <Link href={logo.url} className="flex items-center gap-2">
-              <span className="text-xl font-bold">{logo.title}</span>
+            <Link href={activeLogo.url} className="flex items-center gap-2">
+              <span className="text-xl font-bold">{activeLogo.title}</span>
             </Link>
             <div className="flex items-center">
               <NavigationMenu>
                 <NavigationMenuList>
-                  {menu.map((item) => renderMenuItem(item))}
+                  {activeMenu.map((item) => renderMenuItem(item))}
                 </NavigationMenuList>
               </NavigationMenu>
             </div>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-4">
+            <LocaleSwitcher />
             {user ? (
               <>
                 <span className="text-sm text-muted-foreground">{user.name}</span>
                 <Button variant="ghost" size="sm" onClick={handleSignOut}>
-                  Sign Out
+                  {t("nav.sign_out")}
                 </Button>
               </>
             ) : (
               <Button asChild size="sm">
-                <Link href="/sign_in">Sign In</Link>
+                <Link href={`/${locale}/sign_in`}>{t("nav.sign_in")}</Link>
               </Button>
             )}
           </div>
@@ -111,8 +123,8 @@ const Navbar = ({
         {/* Mobile Menu */}
         <div className="flex h-16 items-center justify-between lg:hidden">
           {/* Logo */}
-          <Link href={logo.url} className="flex items-center gap-2">
-            <span className="text-xl font-bold">{logo.title}</span>
+          <Link href={activeLogo.url} className="flex items-center gap-2">
+            <span className="text-xl font-bold">{activeLogo.title}</span>
           </Link>
           <Sheet>
             <SheetTrigger asChild>
@@ -123,8 +135,8 @@ const Navbar = ({
             <SheetContent className="overflow-y-auto">
               <SheetHeader>
                 <SheetTitle>
-                  <Link href={logo.url} className="flex items-center gap-2">
-                    <span className="text-xl font-bold">{logo.title}</span>
+                  <Link href={activeLogo.url} className="flex items-center gap-2">
+                    <span className="text-xl font-bold">{activeLogo.title}</span>
                   </Link>
                 </SheetTitle>
               </SheetHeader>
@@ -134,20 +146,22 @@ const Navbar = ({
                   collapsible
                   className="flex w-full flex-col gap-4"
                 >
-                  {menu.map((item) => renderMobileMenuItem(item))}
+                  {activeMenu.map((item) => renderMobileMenuItem(item))}
                 </Accordion>
+
+                <LocaleSwitcher />
 
                 <div className="flex flex-col gap-3">
                   {user ? (
                     <>
                       <span className="text-sm text-muted-foreground">{user.name}</span>
                       <Button variant="outline" onClick={handleSignOut}>
-                        Sign Out
+                        {t("nav.sign_out")}
                       </Button>
                     </>
                   ) : (
                     <Button asChild>
-                      <Link href="/sign_in">Sign In</Link>
+                      <Link href={`/${locale}/sign_in`}>{t("nav.sign_in")}</Link>
                     </Button>
                   )}
                 </div>

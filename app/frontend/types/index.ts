@@ -8,7 +8,11 @@ export type User = {
   email: string
 }
 
+export type Locale = "en" | "zh"
+
 export type SharedProps = {
   flash: Flash
   user: User | null
+  locale: Locale
+  available_locales: Locale[]
 }

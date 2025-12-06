@@ -1,0 +1,8 @@
+---
+translations:
+  - file: app/frontend/locales/:locale.json
+    patterns:
+      - "*"
+      - "!*.activerecord"
+      - "!*.errors"
+      - "!*.number.nth"

@@ -11,7 +11,7 @@ class PasswordlessSessionsController < InertiaController
 
     if @user.persisted?
       send_passwordless_email
-      redirect_to sign_in_path, notice: "Check your email for a sign-in link."
+      redirect_to sign_in_path, notice: t("flash.magic_link_sent")
     else
       redirect_to sign_in_path, alert: @user.errors.full_messages.first
     end
@@ -22,14 +22,14 @@ class PasswordlessSessionsController < InertiaController
 
     if @user
       start_new_session_for(@user)
-      redirect_to root_path, notice: "You have been signed in successfully."
+      redirect_to localized_root_path, notice: t("flash.signed_in")
     else
-      redirect_to sign_in_path, alert: "That sign-in link is invalid or has expired."
+      redirect_to sign_in_path, alert: t("flash.invalid_token")
     end
   end
 
   private
     def send_passwordless_email
-      UserMailer.with(user: @user).passwordless.deliver_later
+      UserMailer.with(user: @user, locale: I18n.locale).passwordless.deliver_later
     end
 end

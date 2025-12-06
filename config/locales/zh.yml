@@ -1,0 +1,53 @@
+zh:
+  # Common
+  app_name: "SaaS 启动器"
+
+  # Navigation
+  nav:
+    features: "功能"
+    feature_1: "功能 1"
+    feature_1_desc: "功能 1 的描述"
+    feature_2: "功能 2"
+    feature_2_desc: "功能 2 的描述"
+    pricing: "定价"
+    posts: "文章"
+    sign_in: "登录"
+    sign_out: "退出"
+
+  # Home page
+  home:
+    title: "Rails SaaS 启动器"
+    heading: "更快地构建您的 SaaS"
+    description: "一个现代化的 Rails 启动器，集成 React、Inertia.js 和 Tailwind CSS。启动下一个项目所需的一切。"
+    get_started: "开始使用"
+    learn_more: "了解更多"
+
+  # Auth
+  auth:
+    sign_in:
+      title: "登录"
+      welcome: "欢迎"
+      subtitle: "登录或创建账户"
+      continue_google: "使用 Google 继续"
+      or: "或者"
+      email: "邮箱"
+      email_placeholder: "you@example.com"
+      continue_email: "使用邮箱继续"
+      sending: "发送中..."
+
+  # Posts
+  posts:
+    title: "博客"
+    read_more: "阅读"
+    read_more_placeholder: "阅读更多关于此主题的内容..."
+    back_to_posts: "返回文章列表"
+    no_posts: "暂无文章。"
+
+  # Flash messages
+  flash:
+    signed_in: "您已成功登录。"
+    signed_out: "您已退出登录。"
+    magic_link_sent: "请检查您的邮箱获取登录链接。"
+    invalid_token: "登录链接无效或已过期。"
+    sign_in_required: "您需要登录才能访问此页面。"
+    already_signed_in: "您已经登录。"

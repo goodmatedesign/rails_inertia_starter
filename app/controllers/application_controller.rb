@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  include Localizable
+
   # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
   allow_browser versions: :modern
 
@@ -13,11 +15,11 @@ class ApplicationController < ActionController::Base
     end
 
     def authenticate
-      redirect_to sign_in_path, alert: "You need to sign in to access this page." unless signed_in?
+      redirect_to sign_in_path, alert: t("flash.sign_in_required") unless signed_in?
     end
 
     def require_no_authentication
-      redirect_to root_path, notice: "You are already signed in." if signed_in?
+      redirect_to localized_root_path, notice: t("flash.already_signed_in") if signed_in?
     end
 
     def signed_in?

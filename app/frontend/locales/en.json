@@ -1,0 +1,483 @@
+{
+  "en": {
+    "activerecord": {
+      "errors": {
+        "messages": {
+          "record_invalid": "Validation failed: %{errors}",
+          "restrict_dependent_destroy": {
+            "has_many": "Cannot delete record because dependent %{record} exist",
+            "has_one": "Cannot delete record because a dependent %{record} exists"
+          }
+        }
+      }
+    },
+    "app_name": "SaaS Starter",
+    "auth": {
+      "sign_in": {
+        "continue_email": "Continue with Email",
+        "continue_google": "Continue with Google",
+        "email": "Email",
+        "email_placeholder": "you@example.com",
+        "or": "Or",
+        "sending": "Sending...",
+        "subtitle": "Sign in or create an account",
+        "title": "Sign In",
+        "welcome": "Welcome"
+      }
+    },
+    "avo": {
+      "action_ran_successfully": "Action ran successfully!",
+      "actions": "Actions",
+      "add_filter": "Add filter",
+      "and_x_other_resources": "and %{count} other resources",
+      "applied": "applied",
+      "are_you_sure": "Are you sure?",
+      "are_you_sure_detach_item": "Are you sure you want to detach this %{item}.",
+      "are_you_sure_you_want_to_run_this_option": "Are you sure you want to run this action?",
+      "attach": "Attach",
+      "attach_and_attach_another": "Attach & Attach another",
+      "attach_item": "Attach %{item}",
+      "attachment_class_attached": "%{attachment_class} attached.",
+      "attachment_class_detached": "%{attachment_class} detached.",
+      "attachment_destroyed": "Attachment destroyed",
+      "attachment_failed": "Failed to attach %{attachment_class}",
+      "cancel": "Cancel",
+      "choose_a_country": "Choose a country",
+      "choose_an_option": "Choose an option",
+      "choose_item": "Choose %{item}",
+      "clear_value": "Clear value",
+      "click_to_reveal_filters": "Click to reveal filters",
+      "close": "Close",
+      "close_modal": "Close modal",
+      "confirm": "Confirm",
+      "copy": "Copy",
+      "create_new_item": "Create new %{item}",
+      "created_at_timestamp": "Created at %{created_at}",
+      "dashboard": "Dashboard",
+      "dashboards": "Dashboards",
+      "default_scope": "All",
+      "delete": "delete",
+      "delete_file": "Delete file",
+      "delete_item": "Delete %{item}",
+      "detach_item": "detach %{item}",
+      "details": "details",
+      "download": "Download",
+      "download_file": "Download file",
+      "download_item": "Download %{item}",
+      "edit": "edit",
+      "edit_item": "edit %{item}",
+      "empty_dashboard_message": "Add cards to this dashboard",
+      "failed": "Failed",
+      "failed_to_find_attachment": "Failed to find attachment",
+      "failed_to_load": "Failed to load",
+      "file": {
+        "one": "file",
+        "other": "files"
+      },
+      "filter_by": "Filter by",
+      "filters": "Filters",
+      "go_back": "Go back",
+      "grid_view": "Grid view",
+      "hide_content": "Hide content",
+      "home": "Home",
+      "key_value_field": {
+        "add_row": "Add row",
+        "delete_row": "Delete row",
+        "key": "Key",
+        "reorder_row": "Reorder row",
+        "value": "Value"
+      },
+      "less_content": "Less content",
+      "list_is_empty": "List is empty",
+      "loading": "Loading",
+      "media_library": {
+        "title": "Media Library"
+      },
+      "more": "More",
+      "more_content": "More content",
+      "more_records_available": "There are more records available.",
+      "nested": {
+        "add_new_item": "Add new %{item}"
+      },
+      "new": "new",
+      "next_page": "Next page",
+      "no_cancel": "No, cancel",
+      "no_cards_present": "No cards present",
+      "no_item_found": "No record found",
+      "no_options_available": "No options available",
+      "no_related_item_found": "No related record found",
+      "not_authorized": "You are not authorized to perform this action.",
+      "number_of_items": {
+        "one": "one %{item}",
+        "other": "%{count} %{item}",
+        "zero": "no %{item}"
+      },
+      "oops_nothing_found": "Oops! Nothing found...",
+      "order": {
+        "higher": "Move record higher",
+        "lower": "Move record lower",
+        "reorder_record": "Reorder record",
+        "to_bottom": "Move record to bottom",
+        "to_top": "Move record to top"
+      },
+      "per_page": "Per page",
+      "prev_page": "Previous page",
+      "records_selected_from_all_pages_html": "All records selected from all pages",
+      "remove_selection": "Remove selection",
+      "reset": "reset",
+      "reset_filters": "Reset filters",
+      "resource_created": "Record created",
+      "resource_destroyed": "Record destroyed",
+      "resource_updated": "Record updated",
+      "resources": "Resources",
+      "run": "Run",
+      "save": "Save",
+      "search": {
+        "cancel_button": "Cancel",
+        "placeholder": "Search"
+      },
+      "select_all": "Select all",
+      "select_all_matching": "Select all matching",
+      "select_item": "Select item",
+      "show_content": "Show content",
+      "sign_out": "Sign out",
+      "sort_asc": "Sort ascending",
+      "sort_desc": "Sort descending",
+      "sort_reset": "Reset sorting",
+      "switch_to_view": "Switch to %{view_type} view",
+      "table_view": "Table view",
+      "this_field_has_attachments_disabled": "This field has attachments disabled.",
+      "tools": "Tools",
+      "type_to_search": "Type to search.",
+      "unauthorized": "Unauthorized",
+      "undo": "undo",
+      "updated_at_timestamp": "Updated at %{updated_at}",
+      "view": "View",
+      "view_item": "view %{item}",
+      "visit_record_on_external_path": "Visit record on external path",
+      "was_successfully_created": "was successfully created",
+      "was_successfully_updated": "was successfully updated",
+      "x_items_more": {
+        "one": "one more item",
+        "other": "%{count} more items",
+        "zero": "no more items"
+      },
+      "x_records_selected_from_a_total_of_x_html": "<span class=\"font-bold text-gray-700\">%{selected}</span> records selected on this page from a total of <span class=\"font-bold text-gray-700\">%{count}</span>",
+      "x_records_selected_from_all_pages_html": "<span class=\"font-bold text-gray-700\">%{count}</span> records selected from all pages",
+      "x_records_selected_from_page_html": "<span class=\"font-bold text-gray-700\">%{selected}</span> records selected on this page",
+      "yes_confirm": "Yes, I'm sure",
+      "you_cant_upload_new_resource": "You can't upload files into the Trix editor until you save the resource.",
+      "you_havent_set_attachment_key": "You haven't set an `attachment_key` to this Trix field.",
+      "you_missed_something_check_form": "You might have missed something. Please check the form."
+    },
+    "date": {
+      "abbr_day_names": [
+        "Sun",
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat"
+      ],
+      "abbr_month_names": [
+        null,
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec"
+      ],
+      "day_names": [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "formats": {
+        "default": "%Y-%m-%d",
+        "long": "%B %d, %Y",
+        "short": "%b %d"
+      },
+      "month_names": [
+        null,
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+      ],
+      "order": [
+        "year",
+        "month",
+        "day"
+      ]
+    },
+    "datetime": {
+      "distance_in_words": {
+        "about_x_hours": {
+          "one": "about 1 hour",
+          "other": "about %{count} hours"
+        },
+        "about_x_months": {
+          "one": "about 1 month",
+          "other": "about %{count} months"
+        },
+        "about_x_years": {
+          "one": "about 1 year",
+          "other": "about %{count} years"
+        },
+        "almost_x_years": {
+          "one": "almost 1 year",
+          "other": "almost %{count} years"
+        },
+        "half_a_minute": "half a minute",
+        "less_than_x_minutes": {
+          "one": "less than a minute",
+          "other": "less than %{count} minutes"
+        },
+        "less_than_x_seconds": {
+          "one": "less than 1 second",
+          "other": "less than %{count} seconds"
+        },
+        "over_x_years": {
+          "one": "over 1 year",
+          "other": "over %{count} years"
+        },
+        "x_days": {
+          "one": "1 day",
+          "other": "%{count} days"
+        },
+        "x_minutes": {
+          "one": "1 minute",
+          "other": "%{count} minutes"
+        },
+        "x_months": {
+          "one": "1 month",
+          "other": "%{count} months"
+        },
+        "x_seconds": {
+          "one": "1 second",
+          "other": "%{count} seconds"
+        }
+      },
+      "prompts": {
+        "day": "Day",
+        "hour": "Hour",
+        "minute": "Minute",
+        "month": "Month",
+        "second": "Seconds",
+        "year": "Year"
+      },
+      "relative": {
+        "future": "in %{time}",
+        "past": "%{time} ago"
+      }
+    },
+    "errors": {
+      "connection_refused": "Oops! Failed to connect to the Web Console middleware.\nPlease make sure a rails development server is running.\n",
+      "format": "%{attribute} %{message}",
+      "messages": {
+        "accepted": "must be accepted",
+        "blank": "can't be blank",
+        "confirmation": "doesn't match %{attribute}",
+        "empty": "can't be empty",
+        "equal_to": "must be equal to %{count}",
+        "even": "must be even",
+        "exclusion": "is reserved",
+        "greater_than": "must be greater than %{count}",
+        "greater_than_or_equal_to": "must be greater than or equal to %{count}",
+        "in": "must be in %{count}",
+        "inclusion": "is not included in the list",
+        "invalid": "is invalid",
+        "less_than": "must be less than %{count}",
+        "less_than_or_equal_to": "must be less than or equal to %{count}",
+        "model_invalid": "Validation failed: %{errors}",
+        "not_a_number": "is not a number",
+        "not_an_integer": "must be an integer",
+        "odd": "must be odd",
+        "other_than": "must be other than %{count}",
+        "password_too_long": "is too long",
+        "present": "must be blank",
+        "required": "must exist",
+        "taken": "has already been taken",
+        "too_long": {
+          "one": "is too long (maximum is 1 character)",
+          "other": "is too long (maximum is %{count} characters)"
+        },
+        "too_short": {
+          "one": "is too short (minimum is 1 character)",
+          "other": "is too short (minimum is %{count} characters)"
+        },
+        "wrong_length": {
+          "one": "is the wrong length (should be 1 character)",
+          "other": "is the wrong length (should be %{count} characters)"
+        }
+      },
+      "unacceptable_request": "A supported version is expected in the Accept header.\n",
+      "unavailable_session": "Session %{id} is no longer available in memory.\n\nIf you happen to run on a multi-process server (like Unicorn or Puma) the process\nthis request hit doesn't store %{id} in memory. Consider turning the number of\nprocesses/workers to one (1) or using a different server in development.\n"
+    },
+    "flash": {
+      "already_signed_in": "You are already signed in.",
+      "invalid_token": "Invalid or expired sign-in link.",
+      "magic_link_sent": "Check your email for a sign-in link.",
+      "sign_in_required": "You need to sign in to access this page.",
+      "signed_in": "You have been signed in successfully.",
+      "signed_out": "You have been signed out."
+    },
+    "helpers": {
+      "select": {
+        "prompt": "Please select"
+      },
+      "submit": {
+        "create": "Create %{model}",
+        "submit": "Save %{model}",
+        "update": "Update %{model}"
+      }
+    },
+    "home": {
+      "description": "A modern Rails starter with React, Inertia.js, and Tailwind CSS. Everything you need to launch your next project.",
+      "get_started": "Get Started",
+      "heading": "Build your SaaS faster",
+      "learn_more": "Learn More",
+      "title": "Rails SaaS Starter"
+    },
+    "marksmith": {
+      "attach_from_gallery": "Attach from gallery",
+      "bold": "bold",
+      "code": "code",
+      "header": "header",
+      "image": "image",
+      "italic": "italic",
+      "link": "link",
+      "markdown_is_supported": "Markdown is supported",
+      "ordered_list": "ordered list",
+      "preview": "preview",
+      "quote": "quote",
+      "task_list": "task_list",
+      "unordered_list": "unordered list",
+      "upload_files": "upload files",
+      "write": "write"
+    },
+    "nav": {
+      "feature_1": "Feature 1",
+      "feature_1_desc": "Description for feature 1",
+      "feature_2": "Feature 2",
+      "feature_2_desc": "Description for feature 2",
+      "features": "Features",
+      "posts": "Posts",
+      "pricing": "Pricing",
+      "sign_in": "Sign In",
+      "sign_out": "Sign Out"
+    },
+    "number": {
+      "currency": {
+        "format": {
+          "delimiter": ",",
+          "format": "%u%n",
+          "negative_format": "-%u%n",
+          "precision": 2,
+          "separator": ".",
+          "significant": false,
+          "strip_insignificant_zeros": false,
+          "unit": "$"
+        }
+      },
+      "format": {
+        "delimiter": ",",
+        "precision": 3,
+        "round_mode": "default",
+        "separator": ".",
+        "significant": false,
+        "strip_insignificant_zeros": false
+      },
+      "human": {
+        "decimal_units": {
+          "format": "%n %u",
+          "units": {
+            "billion": "Billion",
+            "million": "Million",
+            "quadrillion": "Quadrillion",
+            "thousand": "Thousand",
+            "trillion": "Trillion",
+            "unit": ""
+          }
+        },
+        "format": {
+          "delimiter": "",
+          "precision": 3,
+          "significant": true,
+          "strip_insignificant_zeros": true
+        },
+        "storage_units": {
+          "format": "%n %u",
+          "units": {
+            "byte": {
+              "one": "Byte",
+              "other": "Bytes"
+            },
+            "eb": "EB",
+            "gb": "GB",
+            "kb": "KB",
+            "mb": "MB",
+            "pb": "PB",
+            "tb": "TB",
+            "zb": "ZB"
+          }
+        }
+      },
+      "nth": {},
+      "percentage": {
+        "format": {
+          "delimiter": "",
+          "format": "%n%"
+        }
+      },
+      "precision": {
+        "format": {
+          "delimiter": ""
+        }
+      }
+    },
+    "posts": {
+      "back_to_posts": "Back to Posts",
+      "no_posts": "No posts yet.",
+      "read_more": "Read",
+      "read_more_placeholder": "Read more about this topic...",
+      "title": "Blog"
+    },
+    "support": {
+      "array": {
+        "last_word_connector": ", and ",
+        "two_words_connector": " and ",
+        "words_connector": ", "
+      }
+    },
+    "time": {
+      "am": "am",
+      "formats": {
+        "default": "%a, %d %b %Y %H:%M:%S %z",
+        "long": "%B %d, %Y %H:%M",
+        "short": "%d %b %H:%M"
+      },
+      "pm": "pm"
+    }
+  }
+}
