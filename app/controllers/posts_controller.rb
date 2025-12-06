@@ -23,7 +23,7 @@ class PostsController < InertiaController
         id: post.id,
         title: post.title,
         slug: post.slug,
-        published_at: post.published_at.iso8601,
+        published_at: post.published_at.to_date.to_fs(:long),
         author: post.user.name
       }
     end
