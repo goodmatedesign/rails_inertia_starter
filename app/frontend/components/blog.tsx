@@ -56,9 +56,11 @@ const Blog = ({ posts, title = "Discover Our Fresh Content" }: BlogProps) => {
                       )}
                     >
                       <div className="flex h-full w-full flex-col items-start justify-between pr-8">
-                        <h2 className="text-foreground text-2xl font-bold tracking-tight md:text-3xl">
-                          {post.title}
-                        </h2>
+                        <Link href={`/posts/${post.slug}`}>
+                          <h2 className="text-foreground text-2xl font-bold tracking-tight md:text-3xl hover:underline">
+                            {post.title}
+                          </h2>
+                        </Link>
                         <p className="text-muted-foreground mt-2 text-sm font-semibold uppercase tracking-widest">
                           {post.published_at}
                         </p>
