@@ -19,15 +19,17 @@ class UserTest < ActiveSupport::TestCase
     assert_equal "test@example.com", user.email
   end
 
-  test "generates passwordless token" do
-    user = users(:one)
-    token = user.generate_token_for(:passwordless)
-    assert_equal user, User.find_by_token_for(:passwordless, token)
-  end
-
   test "destroys sessions when destroyed" do
     user = users(:one)
     assert_difference "Session.count", -user.sessions.count do
+      user.destroy
+    end
+  end
+
+  test "destroys magic_links when destroyed" do
+    user = users(:one)
+    user.magic_links.create!
+    assert_difference "MagicLink.count", -1 do
       user.destroy
     end
   end

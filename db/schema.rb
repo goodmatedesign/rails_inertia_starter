@@ -10,9 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_12_05_125513) do
+ActiveRecord::Schema[8.1].define(version: 2025_12_06_101419) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
+
+  create_table "magic_links", force: :cascade do |t|
+    t.string "code", null: false
+    t.datetime "created_at", null: false
+    t.datetime "expires_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["code"], name: "index_magic_links_on_code", unique: true
+    t.index ["expires_at"], name: "index_magic_links_on_expires_at"
+    t.index ["user_id"], name: "index_magic_links_on_user_id"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.text "content"
@@ -49,6 +60,7 @@ ActiveRecord::Schema[8.1].define(version: 2025_12_05_125513) do
     t.index ["uid"], name: "index_users_on_uid"
   end
 
+  add_foreign_key "magic_links", "users"
   add_foreign_key "posts", "users"
   add_foreign_key "sessions", "users"
 end

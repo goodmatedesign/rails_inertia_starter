@@ -3,14 +3,11 @@ class User < ApplicationRecord
 
   has_many :sessions, dependent: :destroy
   has_many :posts, dependent: :destroy
+  has_many :magic_links, dependent: :destroy
 
   normalizes :email, with: -> { _1.strip.downcase }
 
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
-
-  generates_token_for :passwordless, expires_in: 15.minutes do
-    [ password_salt.last(10), email ]
-  end
 
   before_validation :set_random_password, on: :create
   before_validation :set_name_from_email, on: :create

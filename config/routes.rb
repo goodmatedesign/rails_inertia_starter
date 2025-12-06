@@ -17,7 +17,8 @@ Rails.application.routes.draw do
     # Authentication
     get "sign_in", to: "passwordless_sessions#new", as: :sign_in
     post "sign_in", to: "passwordless_sessions#create"
-    get "sign_in/:sid", to: "passwordless_sessions#show", as: :passwordless_sessions
+    get "sign_in/verify", to: "passwordless_sessions#verify", as: :verify_sign_in
+    post "sign_in/verify", to: "passwordless_sessions#confirm"
     delete "sign_out", to: "sessions#destroy", as: :sign_out
 
     # Home

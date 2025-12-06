@@ -46,19 +46,19 @@ zh:
   # Mailers
   user_mailer:
     passwordless:
-      subject: "您的登录链接"
+      subject: "您的登录验证码是 %{code}"
       greeting: "您好，"
-      instructions: "点击下方链接登录您的账户："
-      sign_in: "登录"
-      expiry: "此链接将在15分钟后过期。"
-      ignore: "如果您没有请求此链接，请忽略此邮件。"
+      instructions: "请输入以下验证码登录您的账户："
+      expiry: "此验证码将在15分钟后过期。"
+      ignore: "如果您没有请求此验证码，请忽略此邮件。"
 
   # Flash messages
   flash:
     signed_in: "您已成功登录。"
     signed_out: "您已退出登录。"
-    magic_link_sent: "请检查您的邮箱获取登录链接。"
+    magic_link_sent: "请检查您的邮箱获取登录验证码。"
     invalid_token: "登录链接无效或已过期。"
+    invalid_code: "验证码无效或已过期，请重试。"
     sign_in_required: "您需要登录才能访问此页面。"
     already_signed_in: "您已经登录。"
     rate_limited: "尝试次数过多，请稍后再试。"
