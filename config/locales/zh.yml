@@ -50,7 +50,7 @@ zh:
       greeting: "您好，"
       instructions: "点击下方链接登录您的账户："
       sign_in: "登录"
-      expiry: "此链接将在1小时后过期，且只能使用一次。"
+      expiry: "此链接将在15分钟后过期。"
       ignore: "如果您没有请求此链接，请忽略此邮件。"
 
   # Flash messages

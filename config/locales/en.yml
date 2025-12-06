@@ -50,7 +50,7 @@ en:
       greeting: "Hi,"
       instructions: "Click the link below to sign in to your account:"
       sign_in: "Sign in"
-      expiry: "This link expires in 1 hour and can only be used once."
+      expiry: "This link expires in 15 minutes."
       ignore: "If you didn't request this link, you can safely ignore this email."
 
   # Flash messages
