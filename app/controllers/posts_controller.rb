@@ -1,4 +1,6 @@
 class PostsController < InertiaController
+  skip_before_action :authenticate
+
   def index
     posts = Post.published.includes(:user).order(published_at: :desc).map do |post|
       post_props(post)
