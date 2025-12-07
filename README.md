@@ -17,15 +17,15 @@ A modern Rails 8.1 + React SaaS starter with authentication, admin panel, and Do
 ### Prerequisites
 
 - Ruby 3.4+
-- Node.js 20+
+- Node.js 22+
 - PostgreSQL
 
 ### Setup
 
 ```bash
 # Clone and install dependencies
-git clone <repo-url>
-cd rails_saas_starter
+git clone https://github.com/goodmatedesign/rails_inertia_starter
+cd rails_inertia_starter
 bin/setup
 ```
 
@@ -80,7 +80,12 @@ bin/rails db:reset    # Reset database
 
 ### Magic Link (Email)
 
-Users enter email, receive a sign-in link valid for 1 hour.
+Users enter email, receive a 6-digit verification code valid for 15 minutes.
+
+**Rate Limiting:**
+
+- Email submission: 10 attempts per 3 minutes
+- Code verification: 10 attempts per 15 minutes
 
 ### Google OAuth
 
@@ -113,6 +118,7 @@ POSTGRES_PASSWORD=<secure-password>
 ```
 
 2. Update `config/deploy.yml`:
+
    - Set your server IP
    - Set your domain
    - Configure registry settings
@@ -178,12 +184,12 @@ bundle exec i18n export
 3. Use in React components:
 
 ```tsx
-import { useI18n } from '@/hooks/use-i18n'
+import { useI18n } from "@/hooks/use-i18n";
 
 export default function MyComponent() {
-  const { t } = useI18n()
+  const { t } = useI18n();
 
-  return <h1>{t("my_feature.title")}</h1>
+  return <h1>{t("my_feature.title")}</h1>;
 }
 ```
 
@@ -206,7 +212,7 @@ config.i18n.available_locales = [:en, :zh, :es]  # Add :es
 3. Update `app/frontend/types/index.ts`:
 
 ```typescript
-export type Locale = "en" | "zh" | "es"
+export type Locale = "en" | "zh" | "es";
 ```
 
 4. Update `app/frontend/components/locale-switcher.tsx`:
@@ -216,19 +222,19 @@ const localeNames: Record<string, string> = {
   en: "EN",
   zh: "中文",
   es: "ES",
-}
+};
 ```
 
 5. Import new locale in `app/frontend/lib/i18n.ts`:
 
 ```typescript
-import es from "@/locales/es.json"
+import es from "@/locales/es.json";
 
 const i18n = new I18n({
   ...en,
   ...zh,
   ...es,
-})
+});
 ```
 
 6. Export translations:
@@ -263,12 +269,40 @@ const { locale } = usePage<SharedProps>().props
 <Link href={`/${locale}/posts`}>Posts</Link>
 ```
 
+## Theming
+
+Dark mode is supported via `next-themes`. The app uses CSS variables with OKLch color space for modern color handling.
+
+Toast notifications are provided by `sonner` with automatic dark mode support.
+
+## Development Tools
+
+### Process Managers
+
+`bin/dev` supports multiple process managers (in order of preference):
+
+- overmind
+- hivemind
+- foreman
+
+### CI Pipeline
+
+The CI suite (`bin/ci`) runs:
+
+1. RuboCop (linting)
+2. Brakeman (security analysis)
+3. bundler-audit (gem vulnerability scanning)
+4. Rails tests
+5. System tests
+
 ## Testing
 
 ```bash
 bin/rails test          # Run all tests
 bin/rails test:system   # System tests
 npm run check           # TypeScript check
+bin/rubocop             # Ruby linting
+bin/brakeman            # Security scan
 bin/ci                  # Full CI suite
 ```
 
