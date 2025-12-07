@@ -465,6 +465,11 @@
       "read_more_placeholder": "Read more about this topic...",
       "title": "Blog"
     },
+    "pricing": {
+      "heading": "Pricing",
+      "title": "Pricing",
+      "wip": "Work in progress"
+    },
     "support": {
       "array": {
         "last_word_connector": ", and ",

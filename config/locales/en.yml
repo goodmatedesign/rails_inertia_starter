@@ -35,6 +35,12 @@ en:
       continue_email: "Continue with Email"
       sending: "Sending..."
 
+  # Pricing page
+  pricing:
+    title: "Pricing"
+    heading: "Pricing"
+    wip: "Work in progress"
+
   # Posts
   posts:
     title: "Blog"

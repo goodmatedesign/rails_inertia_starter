@@ -75,7 +75,7 @@ const Navbar = ({
         },
       ],
     },
-    { title: t("nav.pricing"), url: "#" },
+    { title: t("nav.pricing"), url: `/${locale}/pricing` },
     { title: t("nav.posts"), url: `/${locale}/posts` },
   ];
 

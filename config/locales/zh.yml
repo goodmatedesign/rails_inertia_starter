@@ -35,6 +35,12 @@ zh:
       continue_email: "使用邮箱继续"
       sending: "发送中..."
 
+  # Pricing page
+  pricing:
+    title: "定价"
+    heading: "定价"
+    wip: "正在开发中"
+
   # Posts
   posts:
     title: "博客"

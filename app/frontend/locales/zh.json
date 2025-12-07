@@ -194,6 +194,11 @@
       "read_more_placeholder": "阅读更多关于此主题的内容...",
       "title": "博客"
     },
+    "pricing": {
+      "heading": "定价",
+      "title": "定价",
+      "wip": "正在开发中"
+    },
     "user_mailer": {
       "passwordless": {
         "expiry": "此验证码将在15分钟后过期。",

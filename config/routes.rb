@@ -24,6 +24,9 @@ Rails.application.routes.draw do
     # Home
     root "home#show", as: :localized_root
 
+    # Pricing
+    get "pricing", to: "pricing#show", as: :pricing
+
     # Posts
     resources :posts, only: [ :index ]
     get "posts/:slug", to: "posts#show", as: :post
