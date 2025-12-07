@@ -1,4 +1,5 @@
 import { Head, Link, usePage } from '@inertiajs/react'
+import { ExternalLink } from 'lucide-react'
 import { Layout } from '@/components/layout'
 import { Button } from '@/components/ui/button'
 import { useI18n } from '@/hooks/use-i18n'
@@ -23,7 +24,9 @@ export default function Home() {
           <Link href={`/${locale}/sign_in`}>
             <Button size="lg">{t("home.get_started")}</Button>
           </Link>
-          <Button size="lg" variant="outline">{t("home.learn_more")}</Button>
+          <a href="https://github.com/goodmatedesign/rails_inertia_starter" target="_blank" rel="noopener noreferrer">
+            <Button size="lg" variant="outline">{t("home.learn_more")} <ExternalLink className="size-4" /></Button>
+          </a>
         </div>
       </main>
     </Layout>
