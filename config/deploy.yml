@@ -8,6 +8,12 @@ image: rails_saas_starter
 servers:
   web:
     - 168.138.13.133
+  vite_ssr:
+    hosts:
+      - 168.138.13.133
+    cmd: bin/vite ssr
+    options:
+      network-alias: vite_ssr
   # job:
   #   hosts:
   #     - 192.168.0.1
@@ -42,6 +48,8 @@ env:
     - RAILS_MASTER_KEY
     - POSTGRES_PASSWORD
   clear:
+    INERTIA_SSR_ENABLED: true
+    INERTIA_SSR_URL: "http://vite_ssr:13714"
     # Set number of cores available to the application on each server (default: 1).
     # WEB_CONCURRENCY: auto
 

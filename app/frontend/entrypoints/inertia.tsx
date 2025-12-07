@@ -1,6 +1,6 @@
 import { createInertiaApp, type ResolvedComponent } from '@inertiajs/react'
-import { StrictMode, type ReactNode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { type ReactNode, createElement } from 'react'
+import { createRoot, hydrateRoot } from 'react-dom/client'
 
 import DefaultLayout from '@/layouts/default-layout'
 
@@ -16,7 +16,7 @@ void createInertiaApp({
   // progress: false,
 
   resolve: (name) => {
-    const pages = import.meta.glob<{default: ResolvedComponent}>('../pages/**/*.tsx', {
+    const pages = import.meta.glob<{ default: ResolvedComponent }>('../pages/**/*.tsx', {
       eager: true,
     })
     const page = pages[`../pages/${name}.tsx`]
@@ -31,11 +31,11 @@ void createInertiaApp({
   },
 
   setup({ el, App, props }) {
-    createRoot(el).render(
-      <StrictMode>
-        <App {...props} />
-      </StrictMode>
-    )
+    if (el.hasChildNodes()) {
+      hydrateRoot(el, createElement(App, props))
+      return
+    }
+    createRoot(el).render(createElement(App, props))
   },
 
   defaults: {
