@@ -34,6 +34,12 @@ en:
       email_placeholder: "you@example.com"
       continue_email: "Continue with Email"
       sending: "Sending..."
+    verify_code:
+      title: "Check your email"
+      subtitle: "We sent a verification code to your email"
+      code_placeholder: "Enter your code"
+      verify: "Verify"
+      check_spam: "Don't see it? Check your spam folder."
 
   # Pricing page
   pricing:

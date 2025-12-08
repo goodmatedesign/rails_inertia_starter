@@ -23,6 +23,13 @@
         "subtitle": "Sign in or create an account",
         "title": "Sign In",
         "welcome": "Welcome"
+      },
+      "verify_code": {
+        "check_spam": "Don't see it? Check your spam folder.",
+        "code_placeholder": "Enter your code",
+        "subtitle": "We sent a verification code to your email",
+        "title": "Check your email",
+        "verify": "Verify"
       }
     },
     "avo": {

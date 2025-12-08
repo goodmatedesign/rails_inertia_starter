@@ -12,6 +12,13 @@
         "subtitle": "登录或创建账户",
         "title": "登录",
         "welcome": "欢迎"
+      },
+      "verify_code": {
+        "check_spam": "没收到？请检查垃圾邮件文件夹。",
+        "code_placeholder": "输入验证码",
+        "subtitle": "我们已向您的邮箱发送了验证码",
+        "title": "请查看您的邮箱",
+        "verify": "验证"
       }
     },
     "avo": {
