@@ -37,8 +37,10 @@ zh:
     verify_code:
       title: "请查看您的邮箱"
       subtitle: "我们已向您的邮箱发送了验证码"
+      code: "验证码"
       code_placeholder: "输入验证码"
       verify: "验证"
+      verifying: "验证中..."
       check_spam: "没收到？请检查垃圾邮件文件夹。"
 
   # Pricing page

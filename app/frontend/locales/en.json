@@ -26,10 +26,12 @@
       },
       "verify_code": {
         "check_spam": "Don't see it? Check your spam folder.",
+        "code": "Verification code",
         "code_placeholder": "Enter your code",
         "subtitle": "We sent a verification code to your email",
         "title": "Check your email",
-        "verify": "Verify"
+        "verify": "Verify",
+        "verifying": "Verifying..."
       }
     },
     "avo": {
