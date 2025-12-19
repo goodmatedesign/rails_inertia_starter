@@ -5,8 +5,8 @@ zh:
   # Navigation
   nav:
     features: "功能"
-    feature_1: "功能 1"
-    feature_1_desc: "功能 1 的描述"
+    feature_1: "加入等待名单"
+    feature_1_desc: "加入我们的等待名单以获得早期访问权限"
     feature_2: "功能 2"
     feature_2_desc: "功能 2 的描述"
     pricing: "定价"
@@ -76,3 +76,12 @@ zh:
     sign_in_required: "您需要登录才能访问此页面。"
     already_signed_in: "您已经登录。"
     rate_limited: "尝试次数过多，请稍后再试。"
+
+  # Waitlist
+  waitlist:
+    title: "加入等待名单"
+    description: "第一时间获取产品发布通知。"
+    email_placeholder: "请输入您的邮箱"
+    submit: "加入等待名单"
+    success: "您已加入名单！"
+    position: "您是第 %{position} 位！"

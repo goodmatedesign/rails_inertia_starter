@@ -5,8 +5,8 @@ en:
   # Navigation
   nav:
     features: "Features"
-    feature_1: "Feature 1"
-    feature_1_desc: "Description for feature 1"
+    feature_1: "Waitlist"
+    feature_1_desc: "Join our waitlist to get early access"
     feature_2: "Feature 2"
     feature_2_desc: "Description for feature 2"
     pricing: "Pricing"
@@ -76,3 +76,12 @@ en:
     sign_in_required: "You need to sign in to access this page."
     already_signed_in: "You are already signed in."
     rate_limited: "Too many attempts. Please try again later."
+
+  # Waitlist
+  waitlist:
+    title: "Join the Waitlist"
+    description: "Be the first to know when we launch."
+    email_placeholder: "Enter your email"
+    submit: "Join Waitlist"
+    success: "You're on the list!"
+    position: "You are #%{position} in line!"

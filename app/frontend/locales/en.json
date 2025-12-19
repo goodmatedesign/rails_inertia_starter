@@ -388,8 +388,8 @@
       "write": "write"
     },
     "nav": {
-      "feature_1": "Feature 1",
-      "feature_1_desc": "Description for feature 1",
+      "feature_1": "Waitlist",
+      "feature_1_desc": "Join our waitlist to get early access",
       "feature_2": "Feature 2",
       "feature_2_desc": "Description for feature 2",
       "features": "Features",
@@ -503,6 +503,14 @@
         "instructions": "Enter this code to sign in to your account:",
         "subject": "Your sign-in code is %{code}"
       }
+    },
+    "waitlist": {
+      "description": "Be the first to know when we launch.",
+      "email_placeholder": "Enter your email",
+      "position": "You are #%{position} in line!",
+      "submit": "Join Waitlist",
+      "success": "You're on the list!",
+      "title": "Join the Waitlist"
     }
   }
 }

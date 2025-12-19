@@ -65,7 +65,7 @@ const Navbar = ({
           title: t("nav.feature_1"),
           description: t("nav.feature_1_desc"),
           icon: <Zap className="size-5 shrink-0" />,
-          url: "#",
+          url: `/${locale}/waitlist`,
         },
         {
           title: t("nav.feature_2"),

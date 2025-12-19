@@ -30,6 +30,10 @@ Rails.application.routes.draw do
     # Posts
     resources :posts, only: [ :index ]
     get "posts/:slug", to: "posts#show", as: :post
+
+    # Waitlist
+    get "waitlist", to: "waitlist#new", as: :waitlist
+    post "waitlist", to: "waitlist#create"
   end
 
   # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
