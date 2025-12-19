@@ -507,6 +507,7 @@
     "waitlist": {
       "description": "Be the first to know when we launch.",
       "email_placeholder": "Enter your email",
+      "joined_count": "+100 people already joined",
       "position": "You are #%{position} in line!",
       "submit": "Join Waitlist",
       "success": "You're on the list!",

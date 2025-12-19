@@ -85,3 +85,4 @@ zh:
     submit: "加入等待名单"
     success: "您已加入名单！"
     position: "您是第 %{position} 位！"
+    joined_count: "已有 100+ 人加入"

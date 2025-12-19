@@ -85,3 +85,4 @@ en:
     submit: "Join Waitlist"
     success: "You're on the list!"
     position: "You are #%{position} in line!"
+    joined_count: "+100 people already joined"

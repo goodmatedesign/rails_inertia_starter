@@ -220,6 +220,7 @@
     "waitlist": {
       "description": "第一时间获取产品发布通知。",
       "email_placeholder": "请输入您的邮箱",
+      "joined_count": "已有 100+ 人加入",
       "position": "您是第 %{position} 位！",
       "submit": "加入等待名单",
       "success": "您已加入名单！",
