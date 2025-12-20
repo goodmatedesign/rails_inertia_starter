@@ -2,6 +2,7 @@ import { Head, Link, usePage } from '@inertiajs/react'
 import { ExternalLink } from 'lucide-react'
 import { Layout } from '@/components/layout'
 import { Button } from '@/components/ui/button'
+import { Features } from '@/components/features'
 import { useI18n } from '@/hooks/use-i18n'
 import type { SharedProps } from '@/types'
 
@@ -29,6 +30,8 @@ export default function Home() {
           </a>
         </div>
       </main>
+
+      <Features />
     </Layout>
   )
 }
