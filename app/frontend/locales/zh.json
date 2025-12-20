@@ -179,9 +179,9 @@
       "signed_out": "您已退出登录。"
     },
     "home": {
-      "description": "一个现代化的 Rails 启动器，集成 React、Inertia.js 和 Tailwind CSS。启动下一个项目所需的一切。",
+      "description": "Rails 8 全功能模板：内置认证、支付、国际化、管理后台、博客和精美的 React 界面。停止配置，开始交付。",
       "get_started": "开始使用",
-      "heading": "更快地构建您的 SaaS",
+      "heading": "周末上线你的 SaaS",
       "learn_more": "了解更多",
       "title": "Rails SaaS 启动器"
     },

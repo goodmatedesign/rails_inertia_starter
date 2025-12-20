@@ -364,9 +364,9 @@
       }
     },
     "home": {
-      "description": "A modern Rails starter with React, Inertia.js, and Tailwind CSS. Everything you need to launch your next project.",
+      "description": "The Rails 8 boilerplate with everything built-in: auth, payments, i18n, admin dashboard, blog, and beautiful React UI. Stop configuring, start shipping.",
       "get_started": "Get Started",
-      "heading": "Build your SaaS faster",
+      "heading": "Launch Your SaaS This Weekend",
       "learn_more": "Learn More",
       "title": "Rails SaaS Starter"
     },
