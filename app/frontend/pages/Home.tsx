@@ -7,6 +7,7 @@ import { Problem } from '@/components/problem'
 import { Solution } from '@/components/solution'
 import { useI18n } from '@/hooks/use-i18n'
 import type { SharedProps } from '@/types'
+import Features from '@/components/features'
 
 export default function Home() {
   const { t } = useI18n()
@@ -36,6 +37,7 @@ export default function Home() {
       <TechStack />
       <Problem />
       <Solution />
+      <Features />
     </Layout>
   )
 }

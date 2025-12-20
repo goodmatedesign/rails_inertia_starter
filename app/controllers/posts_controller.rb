@@ -6,7 +6,15 @@ class PostsController < InertiaController
       post_props(post)
     end
 
-    render inertia: "posts/Index", props: { posts: posts }
+    respond_to do |format|
+      format.html do
+        render inertia: "posts/Index", props: { posts: posts }
+      end
+
+      format.json do
+        render json: posts
+      end
+    end
   end
 
   def show
