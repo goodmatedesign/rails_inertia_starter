@@ -3,6 +3,10 @@ import { type ReactNode, createElement } from 'react'
 import { createRoot, hydrateRoot } from 'react-dom/client'
 
 import DefaultLayout from '@/layouts/default-layout'
+import { initializeTheme } from '@/hooks/use-appearance'
+
+// Initialize theme before React hydration to prevent flash
+initializeTheme()
 
 void createInertiaApp({
   // Set default page title

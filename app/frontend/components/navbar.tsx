@@ -23,6 +23,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { AppearanceDropdown } from "@/components/appearance-dropdown";
 import { LocaleSwitcher } from "@/components/locale-switcher";
 import { useI18n } from "@/hooks/use-i18n";
 import type { SharedProps } from "@/types";
@@ -105,6 +106,7 @@ const Navbar = ({
           </div>
           <div className="flex items-center gap-4">
             <LocaleSwitcher />
+            <AppearanceDropdown />
             {user ? (
               <>
                 <span className="text-sm text-muted-foreground">{user.name}</span>
@@ -149,7 +151,10 @@ const Navbar = ({
                   {activeMenu.map((item) => renderMobileMenuItem(item))}
                 </Accordion>
 
-                <LocaleSwitcher />
+                <div className="flex items-center gap-4">
+                  <LocaleSwitcher />
+                  <AppearanceDropdown />
+                </div>
 
                 <div className="flex flex-col gap-3">
                   {user ? (
