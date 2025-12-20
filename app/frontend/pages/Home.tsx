@@ -2,7 +2,7 @@ import { Head, Link, usePage } from '@inertiajs/react'
 import { ExternalLink } from 'lucide-react'
 import { Layout } from '@/components/layout'
 import { Button } from '@/components/ui/button'
-import { Features } from '@/components/features'
+import { TechStack } from '@/components/tech-stack'
 import { Problem } from '@/components/problem'
 import { Solution } from '@/components/solution'
 import { useI18n } from '@/hooks/use-i18n'
@@ -33,7 +33,7 @@ export default function Home() {
         </div>
       </main>
 
-      <Features />
+      <TechStack />
       <Problem />
       <Solution />
     </Layout>

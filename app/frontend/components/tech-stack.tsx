@@ -1,16 +1,16 @@
 import { cn } from "@/lib/utils";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
-type Feature = {
+type TechStackItem = {
   name: string;
   description: string;
   icon: string;
 };
 
-type FeaturesProps = {
+type TechStackProps = {
   title?: string;
   subtitle?: string;
-  features?: Feature[];
+  technologies?: TechStackItem[];
   className?: string;
 };
 
@@ -25,7 +25,7 @@ function SkillIcon({ icon, name }: { icon: string; name: string }) {
   );
 }
 
-const defaultFeatures: Feature[] = [
+const defaultTechStack: TechStackItem[] = [
   {
     name: "Ruby on Rails 8.1",
     description: "The full-stack framework for building modern web applications.",
@@ -88,12 +88,12 @@ const defaultFeatures: Feature[] = [
   },
 ];
 
-export function Features({
+export function TechStack({
   title = "Build with your favorite tech stack",
   subtitle = "Use the latest industry-standard technologies for your next project",
-  features = defaultFeatures,
+  technologies = defaultTechStack,
   className,
-}: FeaturesProps) {
+}: TechStackProps) {
   return (
     <section className={cn("bg-background py-24", className)}>
       <div className="container mx-auto px-4">
@@ -105,19 +105,19 @@ export function Features({
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {features.map((feature) => (
+          {technologies.map((tech) => (
             <Card
-              key={feature.name}
+              key={tech.name}
               className="group transition-all hover:border-foreground/20 hover:shadow-md"
             >
               <CardHeader className="pb-2">
                 <div className="mb-2">
-                  <SkillIcon icon={feature.icon} name={feature.name} />
+                  <SkillIcon icon={tech.icon} name={tech.name} />
                 </div>
-                <CardTitle className="text-base">{feature.name}</CardTitle>
+                <CardTitle className="text-base">{tech.name}</CardTitle>
               </CardHeader>
               <CardContent className="pt-0">
-                <CardDescription>{feature.description}</CardDescription>
+                <CardDescription>{tech.description}</CardDescription>
               </CardContent>
             </Card>
           ))}
@@ -127,5 +127,5 @@ export function Features({
   );
 }
 
-export { defaultFeatures, SkillIcon };
-export type { Feature, FeaturesProps };
+export { defaultTechStack, SkillIcon };
+export type { TechStackItem, TechStackProps };
