@@ -108,28 +108,6 @@ Admin panel available at `/avo` (admin users only).
 
 ## Deployment
 
-### Kamal Setup
-
-1. Configure `.kamal/secrets`:
-
-```bash
-RAILS_MASTER_KEY=<your-master-key>
-POSTGRES_PASSWORD=<secure-password>
-```
-
-2. Update `config/deploy.yml`:
-
-   - Set your server IP
-   - Set your domain
-   - Configure registry settings
-
-3. Deploy:
-
-```bash
-bin/kamal setup   # First deploy
-bin/kamal deploy  # Subsequent deploys
-```
-
 ### Production Credentials
 
 For production, create separate credentials:
@@ -140,13 +118,52 @@ EDITOR="code --wait" bin/rails credentials:edit --environment production
 
 Add the same keys as development credentials.
 
-### Environment Variables
+Additionally, create `config/postgres.key` with your production database password.
 
-Required in production:
+Check `.kamal/secrets` for details:
 
-- `RAILS_MASTER_KEY` - Rails credentials key
-- `POSTGRES_PASSWORD` - Database password
-- `DB_HOST` - Database host (set in deploy.yml)
+```bash
+RAILS_MASTER_KEY=$(cat config/credentials/production.key)
+POSTGRES_PASSWORD=$(cat config/postgres.key)
+```
+
+### Kamal Setup
+
+1. Update `config/deploy.yml`:
+
+   - Set your server IP
+   - Set your domain
+   - Configure registry settings ( we use local registry by default, so you can skip this step )
+
+2. Deploy:
+
+```bash
+bin/kamal setup   # First deploy
+bin/kamal accessory boot db # Start database
+bin/kamal deploy  # Subsequent deploys
+```
+
+### Trubleshooting
+
+#### permission denied while trying to connect to the docker API
+
+```
+ERROR (SSHKit::Command::Failed): Exception while executing on host 12.222.123.123: docker exit status: 1
+docker stdout: Nothing written
+docker stderr: permission denied while trying to connect to the docker API at unix:///var/run/docker.sock
+```
+
+Check https://kamal-deploy.org/docs/configuration/ssh/
+
+#### target failed to become healthy within configured timeout
+
+```
+ERROR (SSHKit::Command::Failed): Exception while executing on host 12.222.123.123: docker exit status: 1
+docker stdout: Nothing written
+docker stderr: Error: target failed to become healthy within configured timeout (30s)
+```
+
+This probably means that your server DB is not reachable from the app container. Check your `config/deploy.yml` and make sure that the DB configuration is correct. and you have started the DB accessory with `bin/kamal accessory boot db`
 
 ## Internationalization (i18n)
 
@@ -271,7 +288,11 @@ const { locale } = usePage<SharedProps>().props
 
 ## Theming
 
-Dark mode is supported via `next-themes`. The app uses CSS variables with OKLch color space for modern color handling.
+Dark mode is supported via a custom `useAppearance` hook with Light/Dark/System modes. The app uses CSS variables with OKLch color space for modern color handling.
+
+- Theme preference is persisted in localStorage
+- System mode follows OS preference and updates automatically
+- Theme is initialized before React hydration to prevent flash
 
 Toast notifications are provided by `sonner` with automatic dark mode support.
 
