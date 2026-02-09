@@ -180,7 +180,7 @@ GEM
     jbuilder (2.14.1)
       actionview (>= 7.0.0)
       activesupport (>= 7.0.0)
-    json (2.18.0)
+    json (2.18.1)
     jwt (3.1.2)
       base64
     kamal (2.10.1)
@@ -213,7 +213,7 @@ GEM
       net-pop
       net-smtp
     marcel (1.1.0)
-    marksmith (0.4.7)
+    marksmith (0.4.8)
       activesupport
     matrix (0.4.3)
     meta-tags (2.22.3)
